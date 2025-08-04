@@ -2,14 +2,21 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 // css styles modules
-import styles from "./styles/App.module.css";
+import styles from "./App.module.css";
 
 function App() {
   return (
     <div>
       <Header />
       <main className={styles.main}>
-        <h1>Conteúdo...</h1>
+        <div>
+          <h2> O que você vai fazer?</h2>
+          <p>formulário</p>
+        </div>
+        <div>
+          <h2>Suas Tarefas</h2>
+          <p>lista</p>
+        </div>
       </main>
       <Footer />
     </div>
