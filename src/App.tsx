@@ -1,6 +1,7 @@
+// components
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-// components
+
 function App() {
   return (
     <div>
