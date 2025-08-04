@@ -1,13 +1,9 @@
-import * as React from 'react';
-
-
-export interface IAppProps {
-}
-
 const Header = () => {
-  return(
-    <div></div>
-  )
-}
+  return (
+    <header>
+      <h1>React + TS Todo</h1>
+    </header>
+  );
+};
 
 export default Header;
