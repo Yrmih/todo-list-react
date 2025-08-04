@@ -9,7 +9,7 @@ function App() {
      <h1>Conteúdo...</h1>
      <footer>
       <p>
-        <span>React + TS Todo</span>
+        <span>React + TS Todo</span> @ 2025
       </p>
 
      </footer>
