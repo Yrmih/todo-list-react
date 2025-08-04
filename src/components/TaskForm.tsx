@@ -1,11 +1,13 @@
 
 
 const TaskForm = () => {
-    return (
+    return <form>
       <div>
-        Formulário de Tarefas
+        <label htmlFor="title">Título:</label>
+        <input type="text" name="title" placeholder="Título da tarefa" />
       </div>
-    );
+    
+    </form>
   }
 
 export default TaskForm;
