@@ -24,3 +24,8 @@
   background-color: #FFF;
   border-color: #282C34;
 }
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
