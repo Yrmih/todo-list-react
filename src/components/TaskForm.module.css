@@ -28,4 +28,10 @@
 .input-container {
   display: flex;
   flex-direction: column;
+  text-align: left;
+}
+
+.input-container label {
+  margin-bottom: 0.4em;
+  font-weight: bold;
 }
