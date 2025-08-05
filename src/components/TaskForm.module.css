@@ -19,3 +19,8 @@
   transition: .5s;
   cursor: pointer;
 }
+
+.form input[type="submit"]:hover {
+  background-color: #FFF;
+  border-color: #282C34;
+}
