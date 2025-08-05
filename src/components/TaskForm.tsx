@@ -1,5 +1,7 @@
+// css styles modules
 import styles from "./TaskForm.module.css";
-
+// interfaces
+import { ITask } from "../interfaces/Task";
 interface ItaskProps {
   btnText: string;
 }
