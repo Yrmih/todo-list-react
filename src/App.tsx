@@ -5,7 +5,8 @@ import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 // css styles modules
 import styles from "./App.module.css";
-
+// interface
+import { ITask } from "./interfaces/Task";
 
 function App() {
   return (
