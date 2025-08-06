@@ -11,7 +11,8 @@ interface ItaskProps {
 const TaskForm = ({ btnText }: ItaskProps) => {
 
   const[id, setId] = useState<number>(0);
-
+  const[title, setTitle] = useState<string>("");
+  const[difficulty, setDifficulty] = useState<number>(0);
 
 
   return (
