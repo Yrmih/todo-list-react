@@ -14,7 +14,7 @@ const TaskForm = ({ btnText }: ItaskProps) => {
   const[title, setTitle] = useState<string>("");
   const[difficulty, setDifficulty] = useState<number>(0);
 
-
+  const addTaskHandler = () => {}
   return (
     <form className={styles.form}>
       <div className={styles.input_container}>
