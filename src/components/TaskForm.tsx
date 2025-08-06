@@ -9,11 +9,13 @@ interface ItaskProps {
 }
 
 const TaskForm = ({ btnText }: ItaskProps) => {
-  const [id, setId] = useState<number>(0);
-  const [title, setTitle] = useState<string>("");
-  const [difficulty, setDifficulty] = useState<number>(0);
+  const [id, setId] = useState<number>(0); // o id será usado para identificar a tarefa.
+  const [title, setTitle] = useState<string>(""); // o title será usado para armazenar o título da tarefa.
+  const [difficulty, setDifficulty] = useState<number>(0); // a dificuldade será usada para armazenar a dificuldade da tarefa.
 
-  const addTaskHandler = () => {};
+  const addTaskHandler = () => {
+
+  }; // o addTaskHandler será responsável por adicionar uma nova tarefa.
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if(e.target.name === "title") {
       setTitle(e.target.value);
@@ -21,7 +23,7 @@ const TaskForm = ({ btnText }: ItaskProps) => {
       setDifficulty(Number(e.target.value));
     }
   };
-
+// o handleChange é responsável por atualizar o estado do título e dificuldade com base no input do usuário.
   return (
     <form onSubmit={addTaskHandler} className={styles.form}>
       <div className={styles.input_container}>
