@@ -16,7 +16,7 @@ const TaskForm = ({ btnText }: ItaskProps) => {
 
   const addTaskHandler = () => {}
   return (
-    <form className={styles.form}>
+    <form onSubmit={addTaskHandler} className={styles.form}>
       <div className={styles.input_container}>
         <label htmlFor="title">Título:</label>
         <input type="text" name="title" placeholder="Título da tarefa" />
