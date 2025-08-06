@@ -9,6 +9,11 @@ interface ItaskProps {
 }
 
 const TaskForm = ({ btnText }: ItaskProps) => {
+
+  const[id, setId] = useState<number>(0);
+
+
+
   return (
     <form className={styles.form}>
       <div className={styles.input_container}>
