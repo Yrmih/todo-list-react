@@ -20,7 +20,7 @@ const TaskForm = ({ btnText }: ItaskProps) => {
     if(e.target.name === "title") {
       setTitle(e.target.value);
     } else {
-      setDifficulty(Number(e.target.value));
+      setDifficulty(parseInt(e.target.value));
     }
   };
 // o handleChange é responsável por atualizar o estado do título e dificuldade com base no input do usuário.
