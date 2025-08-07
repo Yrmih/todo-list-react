@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 
 // css styles modules
 import styles from "./TaskForm.module.css";
@@ -7,6 +7,7 @@ import { ITask } from "../interfaces/Task";
 interface ItaskProps {
   btnText: string;
   taskList: ITask[];
+  setTaskList: React.Dispatch<React.SetStateAction<ITask[]>>; // função para atualizar a lista de tarefas
 }
 
 const TaskForm = ({ btnText, taskList }: ItaskProps) => {
