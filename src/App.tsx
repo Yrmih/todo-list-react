@@ -9,6 +9,9 @@ import styles from "./App.module.css";
 import { ITask } from "./interfaces/Task";
 
 function App() {
+
+  const [tasklist, setTaskList] = useState<ITask[]>([]); // o tasklist será usado para armazenar as tarefas.
+
   return (
     <div>
       <Header />
