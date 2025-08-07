@@ -15,7 +15,9 @@ const TaskForm = ({ btnText, taskList }: ItaskProps) => {
   const [difficulty, setDifficulty] = useState<number>(0); // a dificuldade será usada para armazenar a dificuldade da tarefa.
 
   const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
-
+      e.preventDefault(); // previne o comportamento padrão do formulário.
+      const id = Math.floor(Math.random() * 1000); // gera um id aleatório para a tarefa.
+      const newTask: ITask = { id, title, difficulty };
   }; // o addTaskHandler será responsável por adicionar uma nova tarefa.
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if(e.target.name === "title") {
