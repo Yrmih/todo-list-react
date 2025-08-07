@@ -19,7 +19,7 @@ function App() {
       <main className={styles.main}>
         <div>
           <h2> O que você vai fazer?</h2>
-          <TaskForm btnText="Criar Tarefa"/>
+          <TaskForm btnText="Criar Tarefa" taskList={tasklist}/>
         </div>
         <div>
           <h2>Suas Tarefas</h2>

@@ -9,7 +9,7 @@ interface ItaskProps {
   taskList: ITask[];
 }
 
-const TaskForm = ({ btnText }: ItaskProps) => {
+const TaskForm = ({ btnText, taskList }: ItaskProps) => {
   const [id, setId] = useState<number>(0); // o id será usado para identificar a tarefa.
   const [title, setTitle] = useState<string>(""); // o title será usado para armazenar o título da tarefa.
   const [difficulty, setDifficulty] = useState<number>(0); // a dificuldade será usada para armazenar a dificuldade da tarefa.
