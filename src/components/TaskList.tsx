@@ -14,7 +14,11 @@ const TaskList = ({ taskList }: IAppProps) => {
   return (
     <>
       {taskList.length > 0 ? (
-        <p>Tem tarefas cadastradas</p> // Se houver tarefas, exibe essa mensagem
+        taskList.map((task) => (
+          <div className={styles.task} key={task.id}>
+            <p>{task.title}</p>
+          </div>
+        ))
       ) : (
         <p>Não há tarefas cadastradas.</p> // Se não houver tarefas, exibe essa mensagem
       )}
