@@ -17,7 +17,7 @@ const TaskList = ({ taskList }: IAppProps) => {
         taskList.map((task) => (
           <div className={styles.task} key={task.id}> 
             <p>{task.title}</p>
-          </div> // o map serve para iterar sobre a lista de tarefas e exibir cada tarefa.
+          </div> // o iterar sobre a lista de tarefas e exibir cada tarefa. e exibir cada tarefa.
         ))
       ) : (
         <p>Não há tarefas cadastradas.</p> // Se não houver tarefas, exibe essa mensagem
