@@ -10,12 +10,16 @@ export interface IAppProps {
 
 
 
-const TaskList = ({taskList}: IAppProps) => {
-    return (
-      <div>
-        Lista de Tarefas
-      </div>
-    );
-  }
+const TaskList = ({ taskList }: IAppProps) => {
+  return (
+    <>
+      {taskList.length > 0 ? (
+        <p>Tem tarefas cadastradas</p> // Se houver tarefas, exibe essa mensagem
+      ) : (
+        <p>Não há tarefas cadastradas.</p> // Se não houver tarefas, exibe essa mensagem
+      )}
+    </>
+  );
+};
 
 export default TaskList;
