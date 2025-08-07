@@ -10,7 +10,6 @@ import { ITask } from "./interfaces/Task";
 import { useState } from "react";
 
 function App() {
-
   const [tasklist, setTaskList] = useState<ITask[]>([]); // o tasklist será usado para armazenar as tarefas.
 
   return (
@@ -19,7 +18,11 @@ function App() {
       <main className={styles.main}>
         <div>
           <h2> O que você vai fazer?</h2>
-          <TaskForm btnText="Criar Tarefa" taskList={tasklist} setTaskList={setTaskList}/>
+          <TaskForm
+            btnText="Criar Tarefa"
+            taskList={tasklist}
+            setTaskList={setTaskList}
+          />
         </div>
         <div>
           <h2>Suas Tarefas</h2>
