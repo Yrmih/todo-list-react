@@ -26,7 +26,7 @@ function App() {
         </div>
         <div>
           <h2>Suas Tarefas</h2>
-          <TaskList />
+          <TaskList taskList={tasklist} />
         </div>
       </main>
       <Footer />
