@@ -27,9 +27,6 @@ const TaskForm = ({ btnText, taskList, setTaskList }: ItaskProps) => {
     // o addTaskHandler será responsável por adicionar uma nova tarefa à lista de tarefas.
     console.log(TaskList); // exibe a nova tarefa no console para depuração.
     // isso é útil para verificar se a tarefa foi adicionada corretamente.
-    // você pode remover isso mais tarde quando não precisar mais depurar.
-    // o console.log é uma boa prática para verificar se a tarefa foi adicionada corretamente.
-    // você pode remover isso mais tarde quando não precisar mais depurar.  
   }; // o addTaskHandler será responsável por adicionar uma nova tarefa.
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.name === "title") {
@@ -48,6 +45,7 @@ const TaskForm = ({ btnText, taskList, setTaskList }: ItaskProps) => {
           name="title"
           placeholder="Título da tarefa"
           onChange={handleChange}
+          value={title || ""}
         />
       </div>
       <div className={styles.input_container}>
@@ -57,6 +55,7 @@ const TaskForm = ({ btnText, taskList, setTaskList }: ItaskProps) => {
           name="title"
           placeholder="Dificuldade da tarefa"
           onChange={handleChange}
+          value={difficulty || ""}
         />
       </div>
       <input type="submit" value={btnText} />
