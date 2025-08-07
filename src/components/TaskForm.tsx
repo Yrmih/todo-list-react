@@ -4,6 +4,7 @@ import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import styles from "./TaskForm.module.css";
 // interfaces
 import { ITask } from "../interfaces/Task";
+import TaskList from "./TaskList";
 interface ItaskProps {
   btnText: string;
   taskList: ITask[];
@@ -24,7 +25,7 @@ const TaskForm = ({ btnText, taskList, setTaskList }: ItaskProps) => {
     setDifficulty(0); // limpa o campo de dificuldade após adicionar a tarefa.
     
     // o addTaskHandler será responsável por adicionar uma nova tarefa à lista de tarefas.
-    console.log(newTask); // exibe a nova tarefa no console para depuração.
+    console.log(TaskList); // exibe a nova tarefa no console para depuração.
     // isso é útil para verificar se a tarefa foi adicionada corretamente.
     // você pode remover isso mais tarde quando não precisar mais depurar.
     // o console.log é uma boa prática para verificar se a tarefa foi adicionada corretamente.
