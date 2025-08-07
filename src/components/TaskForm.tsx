@@ -6,6 +6,7 @@ import styles from "./TaskForm.module.css";
 import { ITask } from "../interfaces/Task";
 interface ItaskProps {
   btnText: string;
+  taskList: ITask[];
 }
 
 const TaskForm = ({ btnText }: ItaskProps) => {
