@@ -52,7 +52,7 @@ const TaskForm = ({ btnText, taskList, setTaskList }: ItaskProps) => {
         <label htmlFor="difficulty">Dificuldade:</label>
         <input
           type="text"
-          name="title"
+          name="difficulty"
           placeholder="Dificuldade da tarefa"
           onChange={handleChange}
           value={difficulty || ""}
