@@ -14,7 +14,7 @@ const TaskForm = ({ btnText, taskList }: ItaskProps) => {
   const [title, setTitle] = useState<string>(""); // o title será usado para armazenar o título da tarefa.
   const [difficulty, setDifficulty] = useState<number>(0); // a dificuldade será usada para armazenar a dificuldade da tarefa.
 
-  const addTaskHandler = () => {
+  const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
 
   }; // o addTaskHandler será responsável por adicionar uma nova tarefa.
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
