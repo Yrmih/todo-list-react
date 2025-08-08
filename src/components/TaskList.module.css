@@ -25,5 +25,7 @@ details h4 {
 }
 
 .actions i {
-  
+  margin-bottom: .5em;
+  font-size: 1.2em;
+  cursor: pointer;
 }
