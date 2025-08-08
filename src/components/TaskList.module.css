@@ -28,4 +28,6 @@ details h4 {
   margin-bottom: .5em;
   font-size: 1.2em;
   cursor: pointer;
+  background-color: #282c34;
+  color: #fff;
 }
