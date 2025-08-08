@@ -37,4 +37,6 @@ details h4 {
 .actions i:hover {
   color: #61DAFB;
   transform: scale(1.2);
+  background-color: #20232a;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
 }
