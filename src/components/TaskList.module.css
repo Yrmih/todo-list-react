@@ -31,4 +31,10 @@ details h4 {
   background-color: #282c34;
   color: #fff;
   padding: .4em;
+  transition: .5s;
+}
+
+.actions i:hover {
+  color: #61DAFB;
+  transform: scale(1.2);
 }
