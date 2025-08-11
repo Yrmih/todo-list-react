@@ -14,7 +14,7 @@ function App() {
 
   const deleTask = (id:number) => { // Função para deletar uma tarefa.
     setTaskList(
-      setTaskList.filter((task) => {
+      tasklist.filter((task) => {
         return task.id !== id;
       })
     )
