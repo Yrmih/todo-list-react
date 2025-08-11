@@ -12,6 +12,14 @@ import { useEffect, useState } from "react";
 function App() {
   const [tasklist, setTaskList] = useState<ITask[]>([]); // o tasklist será usado para armazenar as tarefas.
 
+  const deleTask = (id:number) => { // Função para deletar uma tarefa.
+    setTaskList(
+      setTaskList.filter((task) => {
+        return task.id !== id;
+      })
+    )
+  }
+
   useEffect(() => {
     console.log("Atualização do taskList:", tasklist); // Log após cada atualização
   }, [tasklist]);
