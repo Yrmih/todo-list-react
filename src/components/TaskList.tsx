@@ -5,6 +5,7 @@ import { ITask } from "../interfaces/Task";
 import styles from "./TaskList.module.css";
 export interface IAppProps {
   taskList: ITask[];
+  handleDeleteTask?: (id: number) => void; // opcional, caso queira passar uma função para deletar tarefas
 }
 
 const TaskList = ({ taskList }: IAppProps) => {
