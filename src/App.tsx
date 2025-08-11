@@ -14,11 +14,11 @@ function App() {
 
   const deleTask = (id:number) => { // Função para deletar uma tarefa.
     setTaskList(
-      tasklist.filter((task) => {
+      tasklist.filter((task) => { // tasklist.filter() retorna um novo array com as tarefas que não possuem o id passado como parâmetro.
         return task.id !== id;
       })
-    )
-  }
+    );
+  };
 
   useEffect(() => {
     console.log("Atualização do taskList:", tasklist); // Log após cada atualização
