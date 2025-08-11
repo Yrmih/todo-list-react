@@ -18,7 +18,7 @@ function App() {
         return task.id !== id;
       })
     );
-  };
+  }
 
   useEffect(() => {
     console.log("Atualização do taskList:", tasklist); // Log após cada atualização
@@ -38,7 +38,7 @@ function App() {
         </div>
         <div>
           <h2>Suas Tarefas</h2>
-          <TaskList taskList={tasklist} />
+          <TaskList taskList={tasklist} handleDeleteTask={deleTask} />
         </div>
       </main>
       <Footer />
