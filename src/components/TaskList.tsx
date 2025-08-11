@@ -1,26 +1,30 @@
-
 // interfaces
 import { ITask } from "../interfaces/Task";
 // css
 import styles from "./TaskList.module.css";
 export interface IAppProps {
   taskList: ITask[];
-  handleDeleteTask?: (id: number) => void; // opcional, caso queira passar uma função para deletar tarefas
+  handleDeleteTask: (id: number) => void; // opcional, caso queira passar uma função para deletar tarefas
 }
 
-const TaskList = ({ taskList }: IAppProps) => {
+const TaskList = ({ taskList, handleDeleteTask }: IAppProps) => {
   return (
     <>
       {taskList.length > 0 ? (
         taskList.map((task) => (
-          <div className={styles.task} key={task.id}> 
+          <div className={styles.task} key={task.id}>
             <div className={styles.details}>
               <h4>{task.title}</h4>
               <p>Dificuldade: {task.difficulty}</p>
             </div>
             <div className={styles.actions}>
               <i className="bi bi-pencil"></i>
-              <i className="bi bi-trash"></i>
+              <i
+                className="bi bi-trash"
+                onClick={() => {
+                  handleDeleteTask(task.id); // Chama a função de deletar tarefa passando o id da tarefa
+                }}
+              ></i>
             </div>
           </div> // o iterar sobre a lista de tarefas e exibir cada tarefa. e exibir cada tarefa.
         ))
