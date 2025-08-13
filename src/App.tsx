@@ -23,6 +23,16 @@ function App() {
     );
   };
 
+  const hideOrShowModal = (display: boolean) =>{
+    const modal = document.querySelector('#modal');
+    if(display) {
+      modal!.classList.remove('hide');
+    } // adicionando a classe 'hide' para esconder o modal.
+    else {
+      modal!.classList.add('hide');
+    }
+  }
+
   useEffect(() => {
     console.log("Atualização do taskList:", tasklist); // Log após cada atualização
   }, [tasklist]);
@@ -31,7 +41,7 @@ function App() {
     <div>
       <Modal>
         <TaskForm
-          btnText="Criar Tarefa"
+          btnText="Editar Tarefa"
           taskList={tasklist}
           setTaskList={setTaskList}
         />
