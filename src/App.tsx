@@ -10,25 +10,32 @@ import styles from "./App.module.css";
 import { ITask } from "./interfaces/Task";
 import { useEffect, useState } from "react";
 
-
 function App() {
   const [tasklist, setTaskList] = useState<ITask[]>([]); // o tasklist será usado para armazenar as tarefas.
 
-  const deleTask = (id:number) => { // Função para deletar uma tarefa.
+  const deleTask = (id: number) => {
+    // Função para deletar uma tarefa.
     setTaskList(
-      tasklist.filter((task) => { // tasklist.filter() retorna um novo array com as tarefas que não possuem o id passado como parâmetro.
+      tasklist.filter((task) => {
+        // tasklist.filter() retorna um novo array com as tarefas que não possuem o id passado como parâmetro.
         return task.id !== id;
       })
     );
-  }
+  };
 
   useEffect(() => {
     console.log("Atualização do taskList:", tasklist); // Log após cada atualização
   }, [tasklist]);
-  
+
   return (
     <div>
-      <Modal />
+      <Modal>
+        <TaskForm
+          btnText="Criar Tarefa"
+          taskList={tasklist}
+          setTaskList={setTaskList}
+        />
+      </Modal>
       <Header />
       <main className={styles.main}>
         <div>
