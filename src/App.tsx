@@ -33,6 +33,9 @@ function App() {
     }
   }
 
+  const editTask = (): void => {
+    hideOrShowModal(true);
+  }
   useEffect(() => {
     console.log("Atualização do taskList:", tasklist); // Log após cada atualização
   }, [tasklist]);
@@ -54,6 +57,7 @@ function App() {
             btnText="Criar Tarefa"
             taskList={tasklist}
             setTaskList={setTaskList}
+            handleEdit={editTask}
           />
         </div>
         <div>

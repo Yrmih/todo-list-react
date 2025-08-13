@@ -5,9 +5,10 @@ import styles from "./TaskList.module.css";
 export interface IAppProps {
   taskList: ITask[];
   handleDeleteTask: (id: number) => void; // opcional, caso queira passar uma função para deletar tarefas
+  handleEdit(): void; // opcional, caso queira passar uma função para editar tarefas
 }
 
-const TaskList = ({ taskList, handleDeleteTask }: IAppProps) => {
+const TaskList = ({ taskList, handleDeleteTask, handleEdit }: IAppProps) => {
   return (
     <>
       {taskList.length > 0 ? (
@@ -18,7 +19,9 @@ const TaskList = ({ taskList, handleDeleteTask }: IAppProps) => {
               <p>Dificuldade: {task.difficulty}</p>
             </div>
             <div className={styles.actions}>
-              <i className="bi bi-pencil"></i>
+              <i className="bi bi-pencil" onClick={() => {
+                handleEdit(); // Chama a função de editar tarefa
+              }}></i>
               <i
                 className="bi bi-trash"
                 onClick={() => {
