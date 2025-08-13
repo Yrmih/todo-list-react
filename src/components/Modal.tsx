@@ -6,10 +6,10 @@ export interface Props {
 const Modal = (props: Props) => {
   return (
     <div id="modal">
-      <div>
+      <div className={style.fade}>
 
       </div>
-      <div>
+      <div className={style.modal}>
         <h2>Texto Modal</h2>
       </div>
     </div>
