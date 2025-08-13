@@ -57,12 +57,11 @@ function App() {
             btnText="Criar Tarefa"
             taskList={tasklist}
             setTaskList={setTaskList}
-            handleEdit={editTask}
           />
         </div>
         <div>
           <h2>Suas Tarefas</h2>
-          <TaskList taskList={tasklist} handleDeleteTask={deleTask} />
+          <TaskList taskList={tasklist} handleDeleteTask={deleTask} handleEdit={editTask}/>
         </div>
       </main>
       <Footer />
