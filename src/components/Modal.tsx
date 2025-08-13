@@ -1,3 +1,5 @@
+import style from './Modal.module.css';
+
 export interface Props {
 }
 
