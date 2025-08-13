@@ -5,12 +5,12 @@ export interface Props {
 
 const Modal = (props: Props) => {
   return (
-    <div id="modal" className={style.modal}>
+    <div id="modal">
       <div>
 
       </div>
       <div>
-        <h2>TExto Modal</h2>
+        <h2>Texto Modal</h2>
       </div>
     </div>
   )
