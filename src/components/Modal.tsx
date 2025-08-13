@@ -5,7 +5,7 @@ export interface Props {
 
 const Modal = (props: Props) => {
   return (
-    <div id="modal">
+    <div id="modal" className={style.modal}>
       <div>
 
       </div>
