@@ -7,7 +7,6 @@ const Modal = (props: Props) => {
   return (
     <div id="modal">
       <div className={style.fade}>
-
       </div>
       <div className={style.modal}>
         <h2>Texto Modal</h2>
