@@ -1,6 +1,7 @@
 // components
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Modal from "./components/Modal";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 // css styles modules
@@ -8,6 +9,7 @@ import styles from "./App.module.css";
 // interface
 import { ITask } from "./interfaces/Task";
 import { useEffect, useState } from "react";
+
 
 function App() {
   const [tasklist, setTaskList] = useState<ITask[]>([]); // o tasklist será usado para armazenar as tarefas.
@@ -26,6 +28,7 @@ function App() {
   
   return (
     <div>
+      <Modal />
       <Header />
       <main className={styles.main}>
         <div>
