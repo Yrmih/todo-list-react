@@ -1,6 +1,7 @@
 import style from './Modal.module.css';
 
 export interface Props {
+  children: React.ReactNode;
 }
 
 const Modal = (props: Props) => {
