@@ -4,7 +4,12 @@ export interface Props {
 const Modal = (props: Props) => {
   return (
     <div id="modal">
-      Div
+      <div>
+
+      </div>
+      <div>
+        <h2>TExto Modal</h2>
+      </div>
     </div>
   )
 }
