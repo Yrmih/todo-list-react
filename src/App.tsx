@@ -41,7 +41,12 @@ function App() {
   };
 
   const updateTask = (id: number, title: string, difficulty: number) => {
+
     const updateTask: ITask = { id, title, difficulty }; // criando um objeto do tipo ITask com os dados atualizados.
+
+    const updatedItems =  tasklist.map((task) => {
+      return task.id === id ? updateTask : task; // se o id da tarefa for igual ao id passado como parâmetro, retorna a tarefa atualizada, caso contrário, retorna a tarefa original.
+    }
   }
 
 
