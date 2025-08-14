@@ -9,12 +9,25 @@ interface ItaskProps {
   btnText: string;
   taskList: ITask[];
   setTaskList: React.Dispatch<React.SetStateAction<ITask[]>>; // função para atualizar a lista de tarefas
+  task?: ITask | null; // tarefa a ser editada, opcional
 }
 
-const TaskForm = ({ btnText, taskList, setTaskList }: ItaskProps) => {
+const TaskForm = ({ btnText, taskList, setTaskList, task }: ItaskProps) => {
   const [id, setId] = useState<number>(0); // o id será usado para identificar a tarefa.
   const [title, setTitle] = useState<string>(""); // o title será usado para armazenar o título da tarefa.
   const [difficulty, setDifficulty] = useState<number>(0); // a dificuldade será usada para armazenar a dificuldade da tarefa.
+
+useEffect(() => { // useEffect para atualizar os campos do formulário quando a tarefa for passada como prop
+
+  if(task) {
+    setId(task.id);
+    setTitle(task.title);
+    setDifficulty(task.difficulty);
+  }
+
+
+},[task])
+
 
   const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // previne o comportamento padrão do formulário.

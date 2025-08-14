@@ -49,6 +49,7 @@ function App() {
         <TaskForm
           btnText="Editar Tarefa"
           taskList={tasklist}
+          task={taskToupdate}
           setTaskList={setTaskList}
         />
       </Modal>
