@@ -5,7 +5,7 @@ import styles from "./TaskList.module.css";
 export interface IAppProps {
   taskList: ITask[];
   handleDeleteTask: (id: number) => void; // opcional, caso queira passar uma função para deletar tarefas
-  handleEdit(): void; // opcional, caso queira passar uma função para editar tarefas
+  handleEdit(task: ITask): void; // opcional, caso queira passar uma função para editar tarefas
 }
 
 const TaskList = ({ taskList, handleDeleteTask, handleEdit }: IAppProps) => {
