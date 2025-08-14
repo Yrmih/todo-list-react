@@ -24,20 +24,21 @@ function App() {
     );
   };
 
-  const hideOrShowModal = (display: boolean) =>{
-    const modal = document.querySelector('#modal');
-    if(display) {
-      modal!.classList.remove('hide');
+  const hideOrShowModal = (display: boolean) => {
+    const modal = document.querySelector("#modal");
+    if (display) {
+      modal!.classList.remove("hide");
     } // adicionando a classe 'hide' para esconder o modal.
     else {
-      modal!.classList.add('hide');
+      modal!.classList.add("hide");
     }
-  }
+  };
 
-  const editTask = (task: ITask): void => { // colocar o itask como parâmetro para editar a tarefa no modal 
+  const editTask = (task: ITask): void => {
+    // colocar o itask como parâmetro para editar a tarefa no modal
     hideOrShowModal(true);
     setTaskToUpdate(task); // setando a tarefa que será editada.
-  }
+  };
   useEffect(() => {
     console.log("Atualização do taskList:", tasklist); // Log após cada atualização
   }, [tasklist]);
@@ -63,7 +64,11 @@ function App() {
         </div>
         <div>
           <h2>Suas Tarefas</h2>
-          <TaskList taskList={tasklist} handleDeleteTask={deleTask} handleEdit={editTask}/>
+          <TaskList
+            taskList={tasklist}
+            handleDeleteTask={deleTask}
+            handleEdit={editTask}
+          />
         </div>
       </main>
       <Footer />
