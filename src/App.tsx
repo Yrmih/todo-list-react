@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [tasklist, setTaskList] = useState<ITask[]>([]); // o tasklist será usado para armazenar as tarefas.
+  const [taskToupdate, setTaskToUpdate] = useState<ITask | null>(null); // o taskToupdate será usado para armazenar a tarefa que será editada.
 
   const deleTask = (id: number) => {
     // Função para deletar uma tarefa.
@@ -35,6 +36,7 @@ function App() {
 
   const editTask = (task: ITask): void => { // colocar o itask como parâmetro para editar a tarefa no modal 
     hideOrShowModal(true);
+    setTaskToUpdate(task); // setando a tarefa que será editada.
   }
   useEffect(() => {
     console.log("Atualização do taskList:", tasklist); // Log após cada atualização
