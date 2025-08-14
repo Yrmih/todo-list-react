@@ -10,6 +10,7 @@ interface ItaskProps {
   taskList: ITask[];
   setTaskList: React.Dispatch<React.SetStateAction<ITask[]>>; // função para atualizar a lista de tarefas
   task?: ITask | null; // tarefa a ser editada, opcional
+  handleUpdate?(): null; // função opcional para atualizar a tarefa
 }
 
 const TaskForm = ({ btnText, taskList, setTaskList, task }: ItaskProps) => {
@@ -30,16 +31,21 @@ useEffect(() => { // useEffect para atualizar os campos do formulário quando a 
 
 
   const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // previne o comportamento padrão do formulário.
+    if(handleUpdate) {
+      console.log(handleUpdate)
+
+    } else {
+
+      e.preventDefault(); // previne o comportamento padrão do formulário.
     const id = Math.floor(Math.random() * 1000); // gera um id aleatório para a tarefa.
     const newTask: ITask = { id, title, difficulty };
     setTaskList!([...taskList, newTask]); // adiciona a nova tarefa à lista de tarefas.
     setTitle(""); // limpa o campo de título após adicionar a tarefa.
     setDifficulty(0); // limpa o campo de dificuldade após adicionar a tarefa.
-    
     // o addTaskHandler será responsável por adicionar uma nova tarefa à lista de tarefas.
     console.log(TaskList); // exibe a nova tarefa no console para depuração.
     // isso é útil para verificar se a tarefa foi adicionada corretamente.
+    }
   }; // o addTaskHandler será responsável por adicionar uma nova tarefa.
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.name === "title") {
