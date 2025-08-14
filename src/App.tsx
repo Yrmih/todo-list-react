@@ -33,7 +33,7 @@ function App() {
     }
   }
 
-  const editTask = (): void => {
+  const editTask = (task: ITask): void => { // colocar o itask como parâmetro para editar a tarefa no modal 
     hideOrShowModal(true);
   }
   useEffect(() => {
