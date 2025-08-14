@@ -39,6 +39,12 @@ function App() {
     hideOrShowModal(true);
     setTaskToUpdate(task); // setando a tarefa que será editada.
   };
+
+  const updateTask = (id: number, title: string, difficulty: number) => {
+    const updateTask: ITask = { id, title, difficulty }; // criando um objeto do tipo ITask com os dados atualizados.
+  }
+
+
   useEffect(() => {
     console.log("Atualização do taskList:", tasklist); // Log após cada atualização
   }, [tasklist]);
