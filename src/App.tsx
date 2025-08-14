@@ -48,6 +48,7 @@ function App() {
       return task.id === id ? updateTask : task; // se o id da tarefa for igual ao id passado como parâmetro, retorna a tarefa atualizada, caso contrário, retorna a tarefa original.
     });
     setTaskList(updatedItems); // o setTaskList atualiza a lista de tarefas com as tarefas atualizadas.
+    hideOrShowModal(false); // esconde o modal após a atualização.
   };
 
 
@@ -63,6 +64,7 @@ function App() {
           taskList={tasklist}
           setTaskList={setTaskList}
           task={taskToupdate} // passando a tarefa que será editada
+          handleUpdate={updateTask}
         />
       </Modal>
       <Header />

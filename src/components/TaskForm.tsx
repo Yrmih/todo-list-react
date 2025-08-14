@@ -10,41 +10,46 @@ interface ItaskProps {
   taskList: ITask[];
   setTaskList: React.Dispatch<React.SetStateAction<ITask[]>>; // função para atualizar a lista de tarefas
   task?: ITask | null; // tarefa a ser editada, opcional
-  handleUpdate?(): null; // função opcional para atualizar a tarefa
+  handleUpdate?(id: number, title: string, difficulty: number): void; // função opcional para atualizar a tarefa
 }
 
-const TaskForm = ({ btnText, taskList, setTaskList, task, handleUpdate }: ItaskProps) => {
+const TaskForm = ({
+  btnText,
+  taskList,
+  setTaskList,
+  task,
+  handleUpdate,
+}: ItaskProps) => {
   const [id, setId] = useState<number>(0); // o id será usado para identificar a tarefa.
   const [title, setTitle] = useState<string>(""); // o title será usado para armazenar o título da tarefa.
   const [difficulty, setDifficulty] = useState<number>(0); // a dificuldade será usada para armazenar a dificuldade da tarefa.
 
-useEffect(() => { // useEffect para atualizar os campos do formulário quando a tarefa for passada como prop
+  useEffect(() => {
+    // useEffect para atualizar os campos do formulário quando a tarefa for passada como prop
 
-  if(task) {
-    setId(task.id);
-    setTitle(task.title);
-    setDifficulty(task.difficulty);
-  }
-
-
-},[task])
-
+    if (task) {
+      setId(task.id);
+      setTitle(task.title);
+      setDifficulty(task.difficulty);
+    }
+  }, [task]);
 
   const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
-    if(handleUpdate) {
-      console.log(handleUpdate)
+    if (handleUpdate) {
+
+      handleUpdate(id, title, difficulty); // chama a função de atualização se estiver definida
+
 
     } else {
-
       e.preventDefault(); // previne o comportamento padrão do formulário.
-    const id = Math.floor(Math.random() * 1000); // gera um id aleatório para a tarefa.
-    const newTask: ITask = { id, title, difficulty };
-    setTaskList!([...taskList, newTask]); // adiciona a nova tarefa à lista de tarefas.
-    setTitle(""); // limpa o campo de título após adicionar a tarefa.
-    setDifficulty(0); // limpa o campo de dificuldade após adicionar a tarefa.
-    // o addTaskHandler será responsável por adicionar uma nova tarefa à lista de tarefas.
-    console.log(TaskList); // exibe a nova tarefa no console para depuração.
-    // isso é útil para verificar se a tarefa foi adicionada corretamente.
+      const id = Math.floor(Math.random() * 1000); // gera um id aleatório para a tarefa.
+      const newTask: ITask = { id, title, difficulty };
+      setTaskList!([...taskList, newTask]); // adiciona a nova tarefa à lista de tarefas.
+      setTitle(""); // limpa o campo de título após adicionar a tarefa.
+      setDifficulty(0); // limpa o campo de dificuldade após adicionar a tarefa.
+      // o addTaskHandler será responsável por adicionar uma nova tarefa à lista de tarefas.
+      console.log(TaskList); // exibe a nova tarefa no console para depuração.
+      // isso é útil para verificar se a tarefa foi adicionada corretamente.
     }
   }; // o addTaskHandler será responsável por adicionar uma nova tarefa.
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
