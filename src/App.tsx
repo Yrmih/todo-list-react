@@ -49,8 +49,8 @@ function App() {
         <TaskForm
           btnText="Editar Tarefa"
           taskList={tasklist}
-          task={taskToupdate}
           setTaskList={setTaskList}
+          task={taskToupdate} // passando a tarefa que será editada
         />
       </Modal>
       <Header />
