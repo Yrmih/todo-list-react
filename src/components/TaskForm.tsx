@@ -13,7 +13,7 @@ interface ItaskProps {
   handleUpdate?(): null; // função opcional para atualizar a tarefa
 }
 
-const TaskForm = ({ btnText, taskList, setTaskList, task }: ItaskProps) => {
+const TaskForm = ({ btnText, taskList, setTaskList, task, handleUpdate }: ItaskProps) => {
   const [id, setId] = useState<number>(0); // o id será usado para identificar a tarefa.
   const [title, setTitle] = useState<string>(""); // o title será usado para armazenar o título da tarefa.
   const [difficulty, setDifficulty] = useState<number>(0); // a dificuldade será usada para armazenar a dificuldade da tarefa.
