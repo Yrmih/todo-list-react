@@ -20,7 +20,7 @@ const TaskList = ({ taskList, handleDeleteTask, handleEdit }: IAppProps) => {
             </div>
             <div className={styles.actions}>
               <i className="bi bi-pencil" onClick={() => {
-                handleEdit(); // Chama a função de editar tarefa
+                handleEdit(task); // Chama a função de editar tarefa
               }}></i>
               <i
                 className="bi bi-trash"
