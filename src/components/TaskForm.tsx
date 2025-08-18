@@ -35,6 +35,7 @@ const TaskForm = ({
   }, [task]);
 
   const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // previne o comportamento padrão do formulário.
     if (handleUpdate) {
       handleUpdate(id, title, difficulty); // chama a função de atualização se estiver defini
     } else {

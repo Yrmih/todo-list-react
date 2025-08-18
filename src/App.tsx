@@ -42,9 +42,11 @@ function App() {
 
   const updateTask = (id: number, title: string, difficulty: number) => {
     const updateTask: ITask = { id, title, difficulty }; // criando um objeto do tipo ITask com os dados atualizados.
+    console.log("Updating task:", updateTask);
     const updatedItems = tasklist.map((task) => {
       return task.id === id ? updateTask : task; // se o id da tarefa for igual ao id passado como parâmetro, retorna a tarefa atualizada, caso contrário, retorna a tarefa original.
     });
+    console.log("Updated task list:", updatedItems);
     setTaskList(updatedItems); // o setTaskList atualiza a lista de tarefas com as tarefas atualizadas.
     hideOrShowModal(false); // esconde o modal após a atualização.
   };
@@ -73,8 +75,6 @@ function App() {
             btnText="Criar Tarefa"
             taskList={tasklist}
             setTaskList={setTaskList}
-            task={taskToupdate} // passando a tarefa que será editada
-            handleUpdate={updateTask} // passando a função de atualização
           />
         </div>
         <div>
