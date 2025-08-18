@@ -36,10 +36,7 @@ const TaskForm = ({
 
   const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
     if (handleUpdate) {
-
-      handleUpdate(id, title, difficulty); // chama a função de atualização se estiver definida
-
-
+      handleUpdate(id, title, difficulty); // chama a função de atualização se estiver defini
     } else {
       e.preventDefault(); // previne o comportamento padrão do formulário.
       const id = Math.floor(Math.random() * 1000); // gera um id aleatório para a tarefa.
